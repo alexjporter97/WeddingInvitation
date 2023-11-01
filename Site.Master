@@ -50,7 +50,8 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <section>
+        <section> 
+            <div class="navbar__background"></div>
             <div class="navbar">
                 <div class="grid-container">
                     <div class="grid-x align-center-middle">

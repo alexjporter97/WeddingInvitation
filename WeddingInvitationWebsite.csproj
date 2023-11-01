@@ -104,6 +104,7 @@
   <ItemGroup>
     <Content Include="images\antipasti-removebg-preview.png" />
     <Content Include="images\background.jpg" />
+    <Content Include="images\bench.jpg" />
     <Content Include="images\favicon.png" />
     <Content Include="images\Hog-roast-logo-removebg-preview.png" />
     <Content Include="images\Hog-roast-logo.jpg" />
@@ -115,8 +116,10 @@
     <Content Include="images\main-image.jpg" />
     <Content Include="images\pizza-logo-removebg-preview.png" />
     <Content Include="images\pizza-logo.jpg" />
+    <Content Include="images\running.png" />
     <Content Include="images\single-vine-x.png" />
     <Content Include="images\single-vine-y.png" />
+    <Content Include="images\walking.png" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\vendor\foundation.js" />
     <Content Include="scripts\vendor\foundation.min.js" />
