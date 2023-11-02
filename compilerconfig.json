@@ -2,5 +2,13 @@
   {
     "outputFile": "styles/Site.css",
     "inputFile": "styles/Site.scss"
+  },
+  {
+    "outputFile": "styles/Variables.css",
+    "inputFile": "styles/Variables.scss"
+  },
+  {
+    "outputFile": "styles/Global.css",
+    "inputFile": "styles/Global.scss"
   }
 ]

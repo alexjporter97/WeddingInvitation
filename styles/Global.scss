@@ -1,0 +1,145 @@
+﻿@import "variables";
+@import 'animate.css';
+
+body {
+    font-family: $hippy-font;
+    color: white !important;
+
+
+    h1, h2, h3, h4, h5 {
+        font-family: $hippy-font;
+        color: black;
+    }
+
+    p {
+        font-family: $hippy-font;
+        font-size: 24px;
+        font-weight: 200;
+    }
+}
+
+/*Navbar*/
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    height: 120px;
+    z-index: 10;
+    transition: all 0.3s ease;
+
+    &__background {
+        height: 130px;
+        width: 100%;
+        position: absolute;
+        background-color: white;
+    }
+
+    a {
+        padding: 0 25px;
+        color: white;
+        font-size: 26px;
+        font-family: $hippy-font;
+
+        @media screen and (max-width: 64em) {
+            font-size: 24px;
+            padding: 0 5px;
+        }
+    }
+}
+
+.navbar.small {
+    transition: all 0.3s ease; 
+    padding: 7px; 
+    clip-path: none;
+    height: auto;
+
+
+    a {
+        font-size: 25px;
+    }
+}
+
+.body-content {
+    background-color: white;
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: 0 -200px;
+    overflow-x: hidden;
+}
+
+.rsvp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 25px;
+
+    @media screen and (max-width: #{$small-screen}) {
+        top: 20%;
+    }
+
+    @media screen and (min-width: #{$medium-screen}) and (max-width: #{$large-screen - 0.0625em}) {
+        top: 63%;
+    }
+}
+
+.grid-container {
+
+    &__large {
+        padding-right: 0.625rem;
+        padding-left: 0.625rem;
+        max-width: 110rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.max-height {
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+///////////////////////////////////////////////////////
+//////////////////// scrollbar ////////////////////////
+//////////////////////////////////////////////////////
+/*::-webkit-scrollbar {
+    width: 10px;
+}*/
+/* Track */
+/*::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}*/
+/* Handle */
+/*::-webkit-scrollbar-thumb {
+    background: $wedding-grey;
+    border-radius: 20px;
+}*/
+/* Handle on hover */
+/*::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}*/
+@media screen and (min-width: 768px) {
+    .body-content {
+        padding: 0;
+    }
+}
+
+a:hover {
+    color: pink;
+}
+
+
+.grid-container__small {
+    max-width: 64rem !important;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    margin-left: auto;
+    margin-right: auto;
+}

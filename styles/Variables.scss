@@ -1,0 +1,53 @@
+﻿// variables.scss
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Coustard:900&display=swap');
+@font-face {
+    font-family: 'keept__';
+    src: url('keept__.ttf') format('truetype');
+}
+
+$hippy-font: 'KEEPT__', truetype;
+
+$wedding-plum: #a97366;
+$wedding-green: #9ba966;
+$wedding-grey: #878787;
+
+$main-font: 'Passion One', sans-seri;
+
+
+$small-screen: 39.9375em;
+$medium-screen: 40em;
+$large-screen: 64em;
+
+/* Small only */
+@media screen and (max-width: #{$small-screen}) {
+}
+
+/* Medium and up */
+@media screen and (min-width: #{$medium-screen}) {
+}
+
+/* Medium and down */
+@media screen and (max-width: #{$medium-screen}) {
+}
+
+/* Medium only */
+@media screen and (min-width: #{$medium-screen}) and (max-width: #{$large-screen - 0.0625em}) {
+  
+}
+
+/* Large and up */
+@media screen and (min-width: #{$large-screen}) {
+   
+}
+
+/* Large and down */
+@media screen and (max-width: #{$large-screen}) {
+  
+}
+
+/* Large only */
+@media screen and (min-width: #{$large-screen}) and (max-width: #{$large-screen + 10.9375em}) {
+ 
+}

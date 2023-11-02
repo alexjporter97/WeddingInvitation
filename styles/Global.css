@@ -1,0 +1,144 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Passion+One&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Coustard:900&display=swap");
+@import 'animate.css';
+@font-face {
+  font-family: "keept__";
+  src: url("keept__.ttf") format("truetype");
+}
+/* Small only */
+/* Medium and up */
+/* Medium and down */
+/* Medium only */
+/* Large and up */
+/* Large and down */
+/* Large only */
+body {
+  font-family: "KEEPT__", truetype;
+  color: white !important;
+}
+body h1, body h2, body h3, body h4, body h5 {
+  font-family: "KEEPT__", truetype;
+  color: black;
+}
+body p {
+  font-family: "KEEPT__", truetype;
+  font-size: 24px;
+  font-weight: 200;
+}
+
+/*Navbar*/
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+  height: 120px;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+.navbar__background {
+  height: 130px;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+}
+.navbar a {
+  padding: 0 25px;
+  color: white;
+  font-size: 26px;
+  font-family: "KEEPT__", truetype;
+}
+@media screen and (max-width: 64em) {
+  .navbar a {
+    font-size: 24px;
+    padding: 0 5px;
+  }
+}
+
+.navbar.small {
+  transition: all 0.3s ease;
+  padding: 7px;
+  clip-path: none;
+  height: auto;
+}
+.navbar.small a {
+  font-size: 25px;
+}
+
+.body-content {
+  background-color: white;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-position: 0 -200px;
+  overflow-x: hidden;
+}
+
+.rsvp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 25px;
+}
+@media screen and (max-width: 39.9375em) {
+  .rsvp {
+    top: 20%;
+  }
+}
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .rsvp {
+    top: 63%;
+  }
+}
+
+.grid-container__large {
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  max-width: 110rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-height {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*::-webkit-scrollbar {
+    width: 10px;
+}*/
+/* Track */
+/*::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}*/
+/* Handle */
+/*::-webkit-scrollbar-thumb {
+    background: $wedding-grey;
+    border-radius: 20px;
+}*/
+/* Handle on hover */
+/*::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}*/
+@media screen and (min-width: 768px) {
+  .body-content {
+    padding: 0;
+  }
+}
+a:hover {
+  color: pink;
+}
+
+.grid-container__small {
+  max-width: 64rem !important;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  margin-left: auto;
+  margin-right: auto;
+}

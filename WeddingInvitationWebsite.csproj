@@ -131,6 +131,20 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="styles\Global.css">
+      <DependentUpon>Global.scss</DependentUpon>
+    </Content>
+    <Content Include="styles\Global.min.css">
+      <DependentUpon>Global.css</DependentUpon>
+    </Content>
+    <Content Include="styles\Variables.css">
+      <DependentUpon>Variables.scss</DependentUpon>
+    </Content>
+    <Content Include="styles\Variables.min.css">
+      <DependentUpon>Variables.css</DependentUpon>
+    </Content>
+    <Content Include="styles\Variables.scss" />
+    <Content Include="styles\KEEPT__.TTF" />
     <None Include="styles\Site.scss" />
     <Content Include="styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -207,6 +221,7 @@
     <None Include="packages.config" />
     <Content Include="scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="scripts\jquery-3.4.1.min.map" />
+    <Content Include="styles\Global.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
