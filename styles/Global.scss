@@ -16,6 +16,14 @@ body {
         font-size: 24px;
         font-weight: 200;
     }
+
+    a {
+        transition: all 0.5s;
+    }
+
+    a:hover {
+        color: $wedding-green;
+    }
 }
 
 /*Navbar*/
@@ -49,15 +57,19 @@ body {
 }
 
 .navbar.small {
-    transition: all 0.3s ease; 
-    padding: 7px; 
+    transition: all 0.3s ease;
+    padding: 7px;
     clip-path: none;
     height: auto;
 
 
+
     a {
         font-size: 25px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
+
+   
 }
 
 .body-content {
@@ -105,6 +117,18 @@ html {
     scroll-behavior: smooth;
 }
 
+.fade {
+    transition: opacity 0.7s ease-in;
+    transition: all 0.7s;
+}
+
+.fadeOut {
+    opacity: 0;
+}
+
+.fadeIn {
+    opacity: 1;
+}
 
 ///////////////////////////////////////////////////////
 //////////////////// scrollbar ////////////////////////

@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <section class="main-banner grid-x">
+    <section class="main-banner grid-x fade fadeOut" id="home">
         <div class="cell large-6 small-12">
             <div class="grid-container flex-container align-bottom max-height">
                 <div class="main-banner__text">
@@ -18,17 +18,17 @@
     </section>
     <div class="rsvp">rsvp</div>
 
-    <section class="info-block">
+    <section class="info-block fade">
         <div class="info-block__top-section">
             <div class="grid-container__large max-height">
                 <div class="grid-x max-height align-middle">
-                    <div class="cell large-2 small-6 text-center">
+                    <div class="cell large-2 small-6 text-center fade fadeOut">
                         <h2>When</h2>
                         <h4>06.09.2024</h4>
 
                     </div>
-                    <div class="cell large-8 small-12"></div>
-                    <div class="cell large-2 small-6 text-center">
+                    <div class="cell large-8 small-12 fade fadeOut"></div>
+                    <div class="cell large-2 small-6 text-center fade  fadeOut">
                         <h2>Where</h2>
                         <a href="https://www.google.com/maps?ll=52.271547,-0.760172&z=16&t=m&hl=en&gl=GB&mapclient=embed&cid=4459081709816286006">
                             <h4>New Lodge Vineyards
@@ -41,7 +41,7 @@
             </div>
         </div>
     </section>
-    <div class="accent-background">
+    <div class="accent-background fade fadeOut">
         <div class="grid-container max-height">
             <div class="grid-x align-bottom max-height">
                 <div class="cell large-6 small-6 text-center">
@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    <section class="countdown-block">
+    <section class="countdown-block fade fadeOut" id="countdown">
         <div class="grid-container max-height">
             <div class="grid-x align-center-middle max-height">
                 <div class="cell small-12 flex-container align-middle flex-dir-column">
@@ -68,11 +68,11 @@
     </section>
 
     <section class="contact" id="guestform">
-        <div class="flex-container align-center-middle flex-dir-column">
+        <div class="flex-container align-center-middle flex-dir-column fade fadeOut">
             <h2>Guest attendance form</h2>
             <p id="pso">Please select one</p>
         </div>
-        <div class="btn-container">
+        <div class="btn-container fade fadeOut">
             <div class="grid-container">
                 <div class="grid-x align-middle grid-margin-x">
                     <div class="cell small-6">
@@ -217,6 +217,28 @@
                 document.getElementById('guestform').style.display = 'none';
                 document.getElementById('thankYouMessage').style.display = 'block';
             }
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.5
+            };
+
+            function observerCallback(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // fade in observed elements that are in view
+                        entry.target.classList.replace('fadeOut', 'fadeIn');
+                    } else {
+                        // fade out observed elements that are not in view
+                        entry.target.classList.replace('fadeIn', 'fadeOut');
+                    }
+                });
+            }
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            const fadeElms = document.querySelectorAll('.fade');
+            fadeElms.forEach(el => observer.observe(el));
         });
     </script>
 </asp:Content>

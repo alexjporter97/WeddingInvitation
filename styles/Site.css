@@ -145,20 +145,16 @@
   border-radius: 10px 10px;
   text-align: center;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 24px;
   animation: ease-in-out 0.5s;
   transition: all 0.5s;
+  font-family: "KEEPT__", truetype;
 }
 .contact button:hover {
   width: fit-content;
-  border: 1px solid black;
-  background: black;
+  border: 2px solid black;
+  background: #9ba966;
   color: white;
-  padding: 20px 10px;
-  border-radius: 10px 10px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 24px;
 }
 .contact .contact__wrapper {
   background-color: white;
