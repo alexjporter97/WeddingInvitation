@@ -16,25 +16,35 @@
         <div class="cell large-6 small-12 tint">
         </div>
     </section>
-    <div class="rsvp">rsvp</div>
+   <%-- <div class="rsvp">rsvp</div>--%>
+    <div id="discoBallLight"></div>
+<div id="discoBall">
+  <div id="discoBallMiddle"></div>
+</div>
 
     <section class="info-block fade">
         <div class="info-block__top-section">
             <div class="grid-container__large max-height">
                 <div class="grid-x max-height align-middle">
-                    <div class="cell large-2 small-6 text-center fade fadeOut">
+                    <div class="cell large-auto small-6 text-center fade fadeOut">
                         <h2>When</h2>
                         <h4>06.09.2024</h4>
 
                     </div>
-                    <div class="cell large-8 small-12 fade fadeOut"></div>
-                    <div class="cell large-2 small-6 text-center fade  fadeOut">
+
+                    <div class="cell large-9 info-block__image-containter small-12 fade fadeOut">
+                         <div class="grid-x max-height align-middle">
+                        <div class="cell small-4 image-1"></div>
+                        <div class="cell small-4 image-2"></div>
+                        <div class="cell small-4 image-3"></div>
+                    </div>
+                    </div>
+
+
+                    <div class="cell large-auto small-6 text-center fade  fadeOut">
                         <h2>Where</h2>
-                        <a href="https://www.google.com/maps?ll=52.271547,-0.760172&z=16&t=m&hl=en&gl=GB&mapclient=embed&cid=4459081709816286006">
-                            <h4>New Lodge Vineyards
-                                <br />
-                                Earls Barton<br />
-                                NN6 OHF</h4>
+                        <a href="https://www.google.com/maps/place/New+Lodge+Vineyard/@52.271547,-0.760172,16z/data=!4m6!3m5!1s0x4877a74c8b92e009:0x3de1d7309a0a8b36!8m2!3d52.2715468!4d-0.7601722!16s%2Fg%2F12hq8k3j0?hl=en&entry=ttu">
+                            <h4>New Lodge Vineyards</h4>
                         </a>
                     </div>
                 </div>
@@ -162,11 +172,11 @@
             $('#yesbutton2').hide();
             $('#nobutton2').hide();
 
-            // Handle the click event for the "No" button
             $('#nobutton, #nobutton2').click(function (event) {
                 event.preventDefault();
                 $('.attendence-declined').show();
                 $('#yesbutton2').show();
+                $('#yesbutton').hide();
                 $('#nobutton2').hide();
                 $('#nobutton').hide();
                 $('.attendence-accepted').hide();
@@ -239,6 +249,62 @@
 
             const fadeElms = document.querySelectorAll('.fade');
             fadeElms.forEach(el => observer.observe(el));
+            var t = 1;
+            var radius = 80;
+            var squareSize = 10.5;
+            var prec = 19.55;
+            var fuzzy = 0.001;
+            var inc = (Math.PI - fuzzy) / prec;
+            var discoBall = document.getElementById("discoBall");
+
+            for (var t = fuzzy; t < Math.PI; t += inc) {
+                var z = radius * Math.cos(t);
+                var currentRadius = Math.abs((radius * Math.cos(0) * Math.sin(t)) - (radius * Math.cos(Math.PI) * Math.sin(t))) / 2.5;
+                var circumference = Math.abs(2 * Math.PI * currentRadius);
+                var squaresThatFit = Math.floor(circumference / squareSize);
+                var angleInc = (Math.PI * 2 - fuzzy) / squaresThatFit;
+                for (var i = angleInc / 2 + fuzzy; i < (Math.PI * 2); i += angleInc) {
+                    var square = document.createElement("div");
+                    var squareTile = document.createElement("div");
+                    squareTile.style.width = squareSize + "px";
+                    squareTile.style.height = squareSize + "px";
+                    squareTile.style.transformOrigin = "0 0 0";
+                    squareTile.style.webkitTransformOrigin = "0 0 0";
+                    squareTile.style.webkitTransform = "rotate(" + i + "rad) rotateY(" + t + "rad)";
+                    squareTile.style.transform = "rotate(" + i + "rad) rotateY(" + t + "rad)";
+                    if ((t > 1.3 && t < 1.9) || (t < -1.3 && t > -1.9)) {
+                        squareTile.style.backgroundColor = randomColor("bright");
+                    } else {
+                        squareTile.style.backgroundColor = randomColor("any");
+                    }
+                    square.appendChild(squareTile);
+                    square.className = "square";
+                    squareTile.style.webkitAnimation = "reflect 2s linear infinite";
+                    squareTile.style.webkitAnimationDelay = String(randomNumber(0, 20) / 10) + "s";
+                    squareTile.style.animation = "reflect 2s linear infinite";
+                    squareTile.style.animationDelay = String(randomNumber(0, 20) / 10) + "s";
+                    squareTile.style.backfaceVisibility = "hidden";
+                    var x = radius * Math.cos(i) * Math.sin(t);
+                    var y = radius * Math.sin(i) * Math.sin(t);
+                    square.style.webkitTransform = "translateX(" + Math.ceil(x) + "px) translateY(" + y + "px) translateZ(" + z + "px)";
+                    square.style.transform = "translateX(" + x + "px) translateY(" + y + "px) translateZ(" + z + "px)";
+                    discoBall.appendChild(square);
+                }
+            }
+
+            function randomColor(type) {
+                var c;
+                if (type == "bright") {
+                    c = randomNumber(130, 255);
+                } else {
+                    c = randomNumber(110, 190);
+                }
+                return "rgb(" + c + "," + c + "," + c + ")";
+            }
+
+            function randomNumber(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
         });
     </script>
 </asp:Content>
