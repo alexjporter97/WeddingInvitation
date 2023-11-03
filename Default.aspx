@@ -77,6 +77,7 @@
         </div>
     </section>
 
+   
     <section class="contact" id="guestform">
         <div class="flex-container align-center-middle flex-dir-column fade fadeOut">
             <h2>Guest attendance form</h2>
@@ -101,6 +102,7 @@
             </div>
         </div>
         <div class="attendence-accepted attendance-form">
+             
             <div class="flex-container align-center-middle flex-dir-column">
                 <p>
                     Yay!
@@ -109,7 +111,7 @@
                 </p>
             </div>
             <div class="grid-container__small contact__wrapper">
-                <div class="grid-x align-middle grid-margin-x">
+                <div class="grid-x align-center-middle grid-margin-x">
                     <div class="cell small-12 flex-container align-center-middle flex-dir-column">
                         <asp:RequiredFieldValidator ID="rfvFullName" runat="server" ControlToValidate="txtFullName" Display="Dynamic" ErrorMessage="Full Name(s) is required." ForeColor="Red"></asp:RequiredFieldValidator>
                         <label for="txtFullName">Full Name(s):</label>
@@ -147,7 +149,7 @@
             </div>
 
             <div class="grid-container__small contact__wrapper">
-                <div class="grid-x align-middle grid-margin-x">
+                <div class="grid-x align-center-middle grid-margin-x">
                     <div class="cell small-12 flex-container align-center-middle flex-dir-column">
 
                         <label for="txtFullName">Full Name(s):</label>

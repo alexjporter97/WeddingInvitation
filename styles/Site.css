@@ -305,6 +305,8 @@
   animation: ease-in-out 0.5s;
   transition: all 0.5s;
   font-family: "KEEPT__", truetype;
+  background: #a97366;
+  color: black;
 }
 .contact button:hover {
   width: fit-content;
@@ -313,16 +315,12 @@
   color: white;
 }
 .contact .contact__wrapper {
-  background-color: white;
-  border-radius: 20px;
-  padding: 120px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 1000px;
-  background-image: url("../images/leaf-border.png");
-  border-radius: 20px;
+  padding: 160px;
   margin-bottom: 110px;
   height: 700px;
+  background-color: white;
+  border-radius: 20px;
+  border: double 10px #a97366;
 }
 @media screen and (max-width: 64em) {
   .contact .contact__wrapper {

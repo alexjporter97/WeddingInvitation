@@ -105,10 +105,14 @@
     <Content Include="images\antipasti-removebg-preview.png" />
     <Content Include="images\background.jpg" />
     <Content Include="images\bench.jpg" />
+    <Content Include="images\bush-left.png" />
+    <Content Include="images\bush-right.png" />
     <Content Include="images\favicon.png" />
     <Content Include="images\Hog-roast-logo-removebg-preview.png" />
     <Content Include="images\Hog-roast-logo.jpg" />
+    <Content Include="images\kisspng-vine-animation-clip-art-bushes-5ab452dfc92fb1.4512951015217671358241.png" />
     <Content Include="images\leaf-border.png" />
+    <Content Include="images\leaves-border.png" />
     <Content Include="images\main-image-2.jpg" />
     <Content Include="images\leaf-bg.jpg" />
     <Content Include="images\leaf-transparent-left.png" />
