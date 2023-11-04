@@ -51,7 +51,7 @@
         <section class="navbar">
             <div class="grid-x align-left">
                 <a href="#home">Home</a>
-                <a href="#countdown">Countdown</a>
+                <a href="#info">General Information</a>
                 <a href="#guestform">Guest form</a>
             </div>
         </section>

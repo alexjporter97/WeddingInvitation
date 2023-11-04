@@ -16,13 +16,13 @@
         <div class="cell large-6 small-12 tint">
         </div>
     </section>
-   <%-- <div class="rsvp">rsvp</div>--%>
+    <%-- <div class="rsvp">rsvp</div>--%>
     <div id="discoBallLight"></div>
-<div id="discoBall">
-  <div id="discoBallMiddle"></div>
-</div>
+    <div id="discoBall">
+        <div id="discoBallMiddle"></div>
+    </div>
 
-    <section class="info-block fade">
+    <section class="info-block fade" id="info">
         <div class="info-block__top-section">
             <div class="grid-container__large max-height">
                 <div class="grid-x max-height align-middle">
@@ -33,11 +33,11 @@
                     </div>
 
                     <div class="cell large-9 info-block__image-containter small-12 fade fadeOut">
-                         <div class="grid-x max-height align-middle">
-                        <div class="cell small-4 image-1"></div>
-                        <div class="cell small-4 image-2"></div>
-                        <div class="cell small-4 image-3"></div>
-                    </div>
+                        <div class="grid-x max-height align-middle">
+                            <div class="cell small-4 image-1"></div>
+                            <div class="cell small-4 image-2"></div>
+                            <div class="cell small-4 image-3"></div>
+                        </div>
                     </div>
 
 
@@ -77,13 +77,13 @@
         </div>
     </section>
 
-   
+
     <section class="contact" id="guestform">
         <div class="flex-container align-center-middle flex-dir-column fade fadeOut">
             <h2>Guest attendance form</h2>
-            <p id="pso">Please select one</p>
+            <%-- <p id="pso">Please select one</p>--%>
         </div>
-        <div class="btn-container fade fadeOut">
+        <%--    <div class="btn-container fade fadeOut">
             <div class="grid-container">
                 <div class="grid-x align-middle grid-margin-x">
                     <div class="cell small-6">
@@ -100,46 +100,53 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="attendence-accepted attendance-form">
-             
+        </div>--%>
+        <div class="attendance-form">
+
             <div class="flex-container align-center-middle flex-dir-column">
-                <p>
-                    Yay!
-                    <br />
-                    Please fill out the form below.
-                </p>
             </div>
             <div class="grid-container__small contact__wrapper">
                 <div class="grid-x align-center-middle grid-margin-x">
-                    <div class="cell small-12 flex-container align-center-middle flex-dir-column">
+
+                    <h3>RSVP</h3>
+
+                    <div class="cell small-12 flex-container align-center-middle flex-dir-row">
                         <asp:RequiredFieldValidator ID="rfvFullName" runat="server" ControlToValidate="txtFullName" Display="Dynamic" ErrorMessage="Full Name(s) is required." ForeColor="Red"></asp:RequiredFieldValidator>
-                        <label for="txtFullName">Full Name(s):</label>
+                        <label class="full-name-label" for="txtFullName">Full Name(s):</label>
                         <asp:TextBox ID="txtFullName" runat="server" TextMode="MultiLine" Rows="4" Columns="50"></asp:TextBox>
 
                     </div>
                     <div class="cell small-12">
-                        <div class="cell small-12 flex-container align-center-middle flex-dir-column">
+                        <%--  <div class="cell small-12 flex-container align-center-middle flex-dir-column">
                             <label for="txtInfo">Any special requirements:</label>
                             <asp:TextBox ID="txtInfo" runat="server"></asp:TextBox>
+                        </div>--%>
+                        <div class="cell small-12 flex-container align-center-middle flex-dir-column">
+                            <div class="checkbox-container">
 
-                        </div>
-                        <div class="cell small-12 flex-container align-center-middle">
-                            <asp:CheckBox ID="CheckBox1" runat="server" Text="Meat" />
-                            <asp:CheckBox ID="CheckBox2" runat="server" Text="Vegan" />
-                            <asp:CheckBox ID="CheckBox3" runat="server" Text="Vegetarian" />
+                                <div class="radio-wrapper">
+                                    <input type="radio" id="RadioButton1" name="acceptance" runat="server" />
+                                    <label for="RadioButton1">Happily accepts</label>
+                                </div>
+
+                                <div class="radio-wrapper">
+                                    <input type="radio" id="RadioButton2" name="acceptance" runat="server" />
+                                    <label for="RadioButton2">Regretfully declines</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="cell small-12">
+                        <h5>please respond by September 6th 2024</h5>
                         <div class="flex-container align-center-middle">
-                            <asp:Button ID="btnSubmit" CssClass="sbt-btn" runat="server" Text="Submit" OnClick="BtnSubmitAccepted_Click" />
+                            <asp:Button ID="btnSubmit" CssClass="sbt-btn" runat="server" Text="Submit" OnClick="BtnSubmit_Click" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="attendence-declined attendance-form">
+        <%-- <div class="attendence-declined attendance-form">
             <div class="flex-container align-center-middle flex-dir-column">
                 <p>
                     We are sorry to hear you won't be attending.
@@ -163,39 +170,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--%>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
-            // Initially hide both attendance forms
-            $('.attendance-form').hide();
-            $('#yesbutton2').hide();
-            $('#nobutton2').hide();
 
-            $('#nobutton, #nobutton2').click(function (event) {
-                event.preventDefault();
-                $('.attendence-declined').show();
-                $('#yesbutton2').show();
-                $('#yesbutton').hide();
-                $('#nobutton2').hide();
-                $('#nobutton').hide();
-                $('.attendence-accepted').hide();
-                $('#pso').hide();
-            });
-
-            // Handle the click event for the "Yes" button
-            $('#yesbutton, #yesbutton2').click(function (event) {
-                event.preventDefault();
-                $('.attendence-accepted').show();
-                $('#nobutton2').show();
-                $('#nobutton').hide();
-                $('#yesbutton').hide();
-                $('#yesbutton2').hide();
-                $('.attendence-declined').hide();
-                $('#pso').hide();
-            });
 
             // Scroll event for changing navbar style
             var scroll_pos = 0;

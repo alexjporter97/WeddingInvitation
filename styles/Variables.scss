@@ -2,19 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Coustard:900&display=swap');
+
+@font-face {
+    font-family: 'montserrat-light';
+    src: url('../fonts/montserrat-light.ttf') format('truetype');
+}
 @font-face {
     font-family: 'keept__';
-    src: url('keept__.ttf') format('truetype');
+    src: url('../fonts/keept__.ttf') format('truetype');
 }
 
-$hippy-font: 'KEEPT__', truetype;
 
 $wedding-plum: #a97366;
 $wedding-green: #9ba966;
 $wedding-grey: #878787;
 
-$main-font: 'Passion One', sans-seri;
-
+$main-font: 'Dancing Script', sans-seri;
+$second-font: 'Passion One', sans-seri;
+$simple-font: 'montserrat-light', truetype;
+$hippy-font: 'KEEPT__', truetype;
 
 $small-screen: 39.9375em;
 $medium-screen: 40em;

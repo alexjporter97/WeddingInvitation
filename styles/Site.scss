@@ -308,8 +308,6 @@
     top: -30px;
     background-color: $wedding-plum;
 
-
-
     @media screen and (min-width: #{$medium-screen}) and (max-width: #{$large-screen - 0.0625em}) {
         top: -45px;
     }
@@ -319,6 +317,18 @@
     h2 {
         font-size: 48px;
         line-height: 1;
+        margin-bottom: 50px;
+    }
+
+
+
+    h3 {
+        font-size: 48px;
+        line-height: 1;
+        font-weight: 200;
+        font-family: $simple-font;
+        letter-spacing: 10px;
+        color: $wedding-green;
     }
 
     p {
@@ -329,8 +339,7 @@
         text-align: center;
         font-weight: 600;
     }
-
-    button, .sbt-btn {
+    /*button, .sbt-btn {
         cursor: pointer;
         width: fit-content;
         border: 2px solid white;
@@ -351,15 +360,17 @@
         border: 2px solid black;
         background: $wedding-green;
         color: white;
-    }
+    }*/
 
     .contact__wrapper {
         padding: 160px;
         margin-bottom: 110px;
         height: 700px;
-        background-color: white;
-        border-radius: 20px;
-        border: double 10px $wedding-plum;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 2px;
+        background-image: url('../images/flower-bg.jpg');
 
         @media screen and (max-width: 64em) {
             padding: 120px 60px;
@@ -368,28 +379,66 @@
         textarea {
             margin: 0 0 1.5rem;
             width: 75%;
+            background-color: transparent;
+            border-bottom: 1px solid black;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            box-shadow: none;
+
 
             @media screen and (max-width: 64em) {
                 width: 100%;
             }
         }
 
+        .full-name-label {
+
+            @media screen and (min-width: #{$medium-screen}) and (max-width: #{$large-screen - 0.0625em}) {
+                width: 170px;
+            }
+
+            @media screen and (max-width: #{$small-screen}) {
+                width: 250px;
+            }
+        }
+
+        textarea[rows] {
+            height: 20px;
+        }
+
+        h5 {
+            font-family: $main-font;
+            text-align: center;
+            padding-top: 30px;
+        }
+
         label {
             font-weight: 600;
             font-size: 24px;
+            font-family: $main-font;
         }
 
         .sbt-btn {
-            border: 1px solid rgb(169, 115,102);
             padding: 10px;
             cursor: pointer;
             margin-top: 10px;
+            cursor: pointer;
+            width: fit-content;
+            border: none;
+            background-color: transparent;
+            padding: 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 24px;
+            animation: ease-in-out 0.5s;
+            transition: all 0.5s;
+            font-family: $simple-font;
+            color: black;
         }
 
 
         .sbt-btn:hover {
-            background-color: (169, 115,102);
-            color: color();
             padding: 10px;
             cursor: pointer;
         }

@@ -2,8 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Passion+One&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Coustard:900&display=swap");
 @font-face {
+  font-family: "montserrat-light";
+  src: url("../fonts/montserrat-light.ttf") format("truetype");
+}
+@font-face {
   font-family: "keept__";
-  src: url("keept__.ttf") format("truetype");
+  src: url("../fonts/keept__.ttf") format("truetype");
 }
 /* Small only */
 /* Medium and up */

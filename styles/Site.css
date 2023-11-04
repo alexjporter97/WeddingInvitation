@@ -3,8 +3,12 @@
 @import url("https://fonts.googleapis.com/css?family=Coustard:900&display=swap");
 @import 'animate.css';
 @font-face {
+  font-family: "montserrat-light";
+  src: url("../fonts/montserrat-light.ttf") format("truetype");
+}
+@font-face {
   font-family: "keept__";
-  src: url("keept__.ttf") format("truetype");
+  src: url("../fonts/keept__.ttf") format("truetype");
 }
 /* Small only */
 /* Medium and up */
@@ -276,6 +280,28 @@
   position: relative;
   top: -30px;
   background-color: #a97366;
+  /*button, .sbt-btn {
+      cursor: pointer;
+      width: fit-content;
+      border: 2px solid white;
+      padding: 20px;
+      border-radius: 10px 10px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 24px;
+      animation: ease-in-out 0.5s;
+      transition: all 0.5s;
+      font-family: $hippy-font;
+      background: $wedding-plum;
+      color: black;
+  }
+
+  button:hover {
+      width: fit-content;
+      border: 2px solid black;
+      background: $wedding-green;
+      color: white;
+  }*/
 }
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
   .contact {
@@ -285,6 +311,15 @@
 .contact h2 {
   font-size: 48px;
   line-height: 1;
+  margin-bottom: 50px;
+}
+.contact h3 {
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 200;
+  font-family: "montserrat-light", truetype;
+  letter-spacing: 10px;
+  color: #9ba966;
 }
 .contact p {
   font-size: 28px;
@@ -293,34 +328,15 @@
   text-align: center;
   font-weight: 600;
 }
-.contact button, .contact .sbt-btn {
-  cursor: pointer;
-  width: fit-content;
-  border: 2px solid white;
-  padding: 20px;
-  border-radius: 10px 10px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 24px;
-  animation: ease-in-out 0.5s;
-  transition: all 0.5s;
-  font-family: "KEEPT__", truetype;
-  background: #a97366;
-  color: black;
-}
-.contact button:hover {
-  width: fit-content;
-  border: 2px solid black;
-  background: #9ba966;
-  color: white;
-}
 .contact .contact__wrapper {
   padding: 160px;
   margin-bottom: 110px;
   height: 700px;
-  background-color: white;
-  border-radius: 20px;
-  border: double 10px #a97366;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 2px;
+  background-image: url("../images/flower-bg.jpg");
 }
 @media screen and (max-width: 64em) {
   .contact .contact__wrapper {
@@ -330,25 +346,59 @@
 .contact .contact__wrapper textarea {
   margin: 0 0 1.5rem;
   width: 75%;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: none;
 }
 @media screen and (max-width: 64em) {
   .contact .contact__wrapper textarea {
     width: 100%;
   }
 }
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .contact .contact__wrapper .full-name-label {
+    width: 170px;
+  }
+}
+@media screen and (max-width: 39.9375em) {
+  .contact .contact__wrapper .full-name-label {
+    width: 250px;
+  }
+}
+.contact .contact__wrapper textarea[rows] {
+  height: 20px;
+}
+.contact .contact__wrapper h5 {
+  font-family: "Dancing Script", sans-seri;
+  text-align: center;
+  padding-top: 30px;
+}
 .contact .contact__wrapper label {
   font-weight: 600;
   font-size: 24px;
+  font-family: "Dancing Script", sans-seri;
 }
 .contact .contact__wrapper .sbt-btn {
-  border: 1px solid rgb(169, 115, 102);
   padding: 10px;
   cursor: pointer;
   margin-top: 10px;
+  cursor: pointer;
+  width: fit-content;
+  border: none;
+  background-color: transparent;
+  padding: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+  animation: ease-in-out 0.5s;
+  transition: all 0.5s;
+  font-family: "montserrat-light", truetype;
+  color: black;
 }
 .contact .contact__wrapper .sbt-btn:hover {
-  background-color: 169, 115, 102;
-  color: color();
   padding: 10px;
   cursor: pointer;
 }
