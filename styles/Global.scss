@@ -1,5 +1,5 @@
 ﻿@import "variables";
-@import 'animate.css';
+
 
 body {
     font-family: $hippy-font;
@@ -36,6 +36,8 @@ body {
     z-index: 10;
     transition: all 0.3s ease;
 
+  
+
     &__background {
         height: 130px;
         width: 100%;
@@ -50,26 +52,14 @@ body {
         font-family: $hippy-font;
 
         @media screen and (max-width: 64em) {
-            font-size: 24px;
-            padding: 0 5px;
+            font-size: 20px;
+            padding: 0 10px;
         }
     }
 }
 
-.navbar.small {
-    transition: all 0.3s ease;
-    padding: 7px;
-    clip-path: none;
-    height: auto;
-
-
-
-    a {
-        font-size: 25px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-   
+#txtFullName {
+    resize: none !important; 
 }
 
 .body-content {
@@ -167,3 +157,13 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
 }
+
+footer {
+    h5 {
+        padding: 0 0 20px 20px;
+        font-family: $simple-font;
+    }
+}
+
+
+//Animations

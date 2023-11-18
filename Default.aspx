@@ -1,8 +1,15 @@
-﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WeddingInvitationWebsite._Default" %>
+﻿<%@ Page Title="Wedding | Home" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WeddingInvitationWebsite._Default" %>
 
+<%@ Register Src="~/AttendanceForm.ascx" TagName="AttendanceForm" TagPrefix="uc" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <%--  <div id="envelope" class="envelope-container">
+    <div class="envelope">
+        <div class="flip">
 
-    <section class="main-banner grid-x fade fadeOut" id="home">
+        </div>
+    </div>
+</div>--%>
+    <section class="main-banner grid-x" id="home">
         <div class="cell large-6 small-12">
             <div class="grid-container flex-container align-bottom max-height">
                 <div class="main-banner__text">
@@ -16,57 +23,11 @@
         <div class="cell large-6 small-12 tint">
         </div>
     </section>
-    <%-- <div class="rsvp">rsvp</div>--%>
     <div id="discoBallLight"></div>
     <div id="discoBall">
         <div id="discoBallMiddle"></div>
     </div>
-
-    <section class="info-block fade" id="info">
-        <div class="info-block__top-section">
-            <div class="grid-container__large max-height">
-                <div class="grid-x max-height align-middle">
-                    <div class="cell large-auto small-6 text-center fade fadeOut">
-                        <h2>When</h2>
-                        <h4>06.09.2024</h4>
-
-                    </div>
-
-                    <div class="cell large-9 info-block__image-containter small-12 fade fadeOut">
-                        <div class="grid-x max-height align-middle">
-                            <div class="cell small-4 image-1"></div>
-                            <div class="cell small-4 image-2"></div>
-                            <div class="cell small-4 image-3"></div>
-                        </div>
-                    </div>
-
-
-                    <div class="cell large-auto small-6 text-center fade  fadeOut">
-                        <h2>Where</h2>
-                        <a href="https://www.google.com/maps/place/New+Lodge+Vineyard/@52.271547,-0.760172,16z/data=!4m6!3m5!1s0x4877a74c8b92e009:0x3de1d7309a0a8b36!8m2!3d52.2715468!4d-0.7601722!16s%2Fg%2F12hq8k3j0?hl=en&entry=ttu">
-                            <h4>New Lodge Vineyards</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="accent-background fade fadeOut">
-        <div class="grid-container max-height">
-            <div class="grid-x align-bottom max-height">
-                <div class="cell large-6 small-6 text-center">
-                    <h2>Ceromony</h2>
-                    <h4>12pm</h4>
-                </div>
-                <div class="cell large-6 small-6 text-center">
-                    <h2>Reception</h2>
-                    <h4>6pm</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section class="countdown-block fade fadeOut" id="countdown">
+    <section class="countdown-block" id="countdown">
         <div class="grid-container max-height">
             <div class="grid-x align-center-middle max-height">
                 <div class="cell small-12 flex-container align-middle flex-dir-column">
@@ -77,117 +38,121 @@
         </div>
     </section>
 
-
-    <section class="contact" id="guestform">
-        <div class="flex-container align-center-middle flex-dir-column fade fadeOut">
-            <h2>Guest attendance form</h2>
-            <%-- <p id="pso">Please select one</p>--%>
-        </div>
-        <%--    <div class="btn-container fade fadeOut">
-            <div class="grid-container">
-                <div class="grid-x align-middle grid-margin-x">
-                    <div class="cell small-6">
-                        <div class="flex-container align-center-middle">
-                            <button id="yesbutton" type="button">Yes! Ill be there</button>
-                            <button id="yesbutton2" type="button">Actaully Yes! Ill be there</button>
-                        </div>
-                    </div>
-                    <div class="cell small-6">
-                        <div class="flex-container align-center-middle">
-                            <button id="nobutton" type="button">No Sorry :(</button>
-                            <button id="nobutton2" type="button">Actually No Sorry :(</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>--%>
-        <div class="attendance-form">
-
-            <div class="flex-container align-center-middle flex-dir-column">
-            </div>
-            <div class="grid-container__small contact__wrapper">
-                <div class="grid-x align-center-middle grid-margin-x">
-
-                    <h3>RSVP</h3>
-
-                    <div class="cell small-12 flex-container align-center-middle flex-dir-row">
-                        <asp:RequiredFieldValidator ID="rfvFullName" runat="server" ControlToValidate="txtFullName" Display="Dynamic" ErrorMessage="Full Name(s) is required." ForeColor="Red"></asp:RequiredFieldValidator>
-                        <label class="full-name-label" for="txtFullName">Full Name(s):</label>
-                        <asp:TextBox ID="txtFullName" runat="server" TextMode="MultiLine" Rows="4" Columns="50"></asp:TextBox>
-
-                    </div>
-                    <div class="cell small-12">
-                        <%--  <div class="cell small-12 flex-container align-center-middle flex-dir-column">
-                            <label for="txtInfo">Any special requirements:</label>
-                            <asp:TextBox ID="txtInfo" runat="server"></asp:TextBox>
-                        </div>--%>
-                        <div class="cell small-12 flex-container align-center-middle flex-dir-column">
-                            <div class="checkbox-container">
-
-                                <div class="radio-wrapper">
-                                    <input type="radio" id="RadioButton1" name="acceptance" runat="server" />
-                                    <label for="RadioButton1">Happily accepts</label>
-                                </div>
-
-                                <div class="radio-wrapper">
-                                    <input type="radio" id="RadioButton2" name="acceptance" runat="server" />
-                                    <label for="RadioButton2">Regretfully declines</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cell small-12">
-                        <h5>please respond by September 6th 2024</h5>
-                        <div class="flex-container align-center-middle">
-                            <asp:Button ID="btnSubmit" CssClass="sbt-btn" runat="server" Text="Submit" OnClick="BtnSubmit_Click" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <%-- <div class="attendence-declined attendance-form">
-            <div class="flex-container align-center-middle flex-dir-column">
+    <section class="map-block" id="location">
+        <div class="basic-banner flex-container flex-dir-column">
+            <h1>Location</h1>
+            <a href="https://www.google.com/maps/place/New+Lodge+Vineyard/@52.271547,-0.760172,16z/data=!4m6!3m5!1s0x4877a74c8b92e009:0x3de1d7309a0a8b36!8m2!3d52.2715468!4d-0.7601722!16s%2Fg%2F12hq8k3j0?hl=en&entry=ttu">
                 <p>
-                    We are sorry to hear you won't be attending.
-                    <br />
-                    Please fill out the form below.
+                    New Lodge Vineyards,
+                <br />
+                    Northampton Rd,<br />
+                    Earls Barton,
+                <br />
+                    Northampton,
+                <br />
+                    NN6 0HF
                 </p>
-            </div>
-
-            <div class="grid-container__small contact__wrapper">
-                <div class="grid-x align-center-middle grid-margin-x">
-                    <div class="cell small-12 flex-container align-center-middle flex-dir-column">
-
-                        <label for="txtFullName">Full Name(s):</label>
-                        <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" Rows="4" Columns="50"></asp:TextBox>
-                    </div>
-
-                    <div class="cell small-12">
-                        <div class="flex-container align-center-middle">
-                            <asp:Button ID="Button1" CssClass="sbt-btn" runat="server" Text="Submit" OnClick="BtnSubmitDeclined_Click" />
-                        </div>
-                    </div>
+            </a>
+        </div>
+        <div class="basic-banner__map fade fadeOut">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4882.898337188832!2d-0.760172!3d52.271547!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877a74c8b92e009%3A0x3de1d7309a0a8b36!2sNew%20Lodge%20Vineyard!5e0!3m2!1sen!2suk!4v1699910352914!5m2!1sen!2suk" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="basic-banner__map__bg">
+                <div class=" max-height">
                 </div>
             </div>
-        </div>--%>
+        </div>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <section class="info-block fade" id="info">
+        <div class="info-block__top-section">
+            <div class="grid-container__large max-height">
+                <div class="grid-x max-height align-middle">
+                    <div class="cell large-auto small-6 text-center fade fadeOut">
+                        <%--  <h2>When</h2>
+                        <h4>06.09.2024</h4>--%>
+                    </div>
+                    <div class="cell large-9 info-block__image-containter small-12 fade fadeOut">
+                        <div class="grid-x max-height align-middle">
+                            <div class="cell small-4 image-1"></div>
+                            <div class="cell small-4 image-2"></div>
+                            <div class="cell small-4 image-3"></div>
+                        </div>
+                    </div>
+                    <div class="cell large-auto small-6 text-center fade  fadeOut">
+                        <%--    <h2>Where</h2>
+                        <a href="https://www.google.com/maps/place/New+Lodge+Vineyard/@52.271547,-0.760172,16z/data=!4m6!3m5!1s0x4877a74c8b92e009:0x3de1d7309a0a8b36!8m2!3d52.2715468!4d-0.7601722!16s%2Fg%2F12hq8k3j0?hl=en&entry=ttu">
+                            <h4>New Lodge Vineyards</h4>
+                        </a>--%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="accent-background fade fadeOut">
+        <div class="grid-container max-height">
+            <div class="grid-x align-bottom max-height">
+                <div class="cell small-4 text-center">
+                    <h2>Ceromony</h2>
+                    <h4>12pm</h4>
+                </div>
+                <div class="cell small-4 text-center">
+                    <h2>When</h2>
+                    <h4>06.09.2024</h4>
+                </div>
+                <div class="cell small-4 text-center">
+                    <h2>Reception</h2>
+                    <h4>6pm</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="image-text-block" id="lodging">
+        <div class="grid-container">
+            <div class="flex-container align-center">
+                <h2>Places to stay nearby</h2>
+            </div>
+            <div class="grid-x">
+                <div class="cell small-12 large-6 flex-container align-center flex-dir-column fade fadeOut">
+                    <h4>Here are a few of many local places to stay that are relatively close to the venue:</h4>
+                    <ul>
+                        <li class="fade fadeOut"><a href="https://www.theworldsend.org/">The Worlds End</a></li>
+                        <li class="fade fadeOut"><a href="https://www.travelodge.co.uk/hotels/704/Wellingborough-hotel?utm_source=google&utm_medium=GHA_Organic&utm_campaign=GHA_Wellingborough">Travelodge Wellingborough</a></li>
+                        <li class="fade fadeOut"><a href="https://www.ihg.com/holidayinn/hotels/gb/en/northampton/ormuk/hoteldetail?cm_mmc=GoogleMaps-_-HI-_-GB-_-ORMUK">Holiday Inn Northampton</a></li>
+                        <li class="fade fadeOut"><a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.travelodge.co.uk%2Fhotels%2F471%2Fnorthampton-round-spinney-hotel%3Futm_source%3Dgoogle%26utm_medium%3DGHA_Organic%26utm_campaign%3DGHA_Northampton%2520Round%2520Spinney%26WT.tsrc%3DGHA_Organic&psig=AOvVaw0OefeY5oBm1EZ0C64e9qUb&ust=1700404339170000&rct=j&opi=77145416">Travelodge Northampton Round Spinney</a></li>
+                        <li class="fade fadeOut"><a href="https://www.premierinn.com/gb/en/hotels/england/northamptonshire/wellingborough/wellingborough.html?cid=GLBC_WELDOG">Premier Inn Wellingborough hotel</a></li>
+                        <li class="fade fadeOut"><a href="https://www.booking.com/hotel/gb/the-stables-at-the-george.en-gb.html?aid=356930&label=metagha-link-LUGB-hotel-2456323_dev-desktop_los-1_bw-9_dow-Monday_defdate-0_room-0_gstadt-2_rateid-public_aud-0_gacid-6623578758_mcid-10_ppa-0_clrid-0_ad-1_gstkid-0_checkin-20231127_ppt-_lp-2826_r-13586103425543951163&sid=84d14bf43c0c2a19e5e50404aa964368&all_sr_blocks=245632301_102377709_2_0_0;checkin=2023-11-27;checkout=2023-11-28;dest_id=-2611091;dest_type=city;dist=0;group_adults=2;group_children=0;hapos=1;highlighted_blocks=245632301_102377709_2_0_0;hpos=1;matching_block_id=245632301_102377709_2_0_0;no_rooms=1;req_adults=2;req_children=0;room1=A%2CA;sb_price_type=total;sr_order=popularity;sr_pri_blocks=245632301_102377709_2_0_0__7000;srepoch=1700318966;srpvid=b7696837946f00d2;type=total;ucfs=1&#hotelTmpl">The Stables @ The George</a></l>
+                        <li class="fade fadeOut"><a href="https://www.premierinn.com/gb/en/hotels/england/northamptonshire/wellingborough/wellingborough.html?cid=GLBC_WELDOG">Premier Inn Wellingborough hotel</a></li>
+                    </ul>
+                </div>
+                <div class="cell small-12 large-6 flex-container align-center fade fadeOut">
+                    <div class="image-text-block__img-container">
+                        <img src="images/running.png" />
+                        <div class="image-text-block__img-container__shadow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <uc:AttendanceForm runat="server" />
     <script>
         $(document).ready(function () {
 
-
             // Scroll event for changing navbar style
-            var scroll_pos = 0;
-            $(document).scroll(function () {
-                scroll_pos = $(this).scrollTop();
-                if (scroll_pos > 50) {
-                    $('.navbar').addClass('small');
-                } else {
-                    $('.navbar').removeClass('small');
-                }
-            });
+            //var scroll_pos = 0;
+            //$(document).scroll(function () {
+            //    scroll_pos = $(this).scrollTop();
+            //    if (scroll_pos > 20) {
+            //        $('.navbar').addClass('small');
+            //    } else {
+            //        $('.navbar').removeClass('small');
+            //    }
+            //});
 
             // Countdown timer
             var countDownDate = new Date("Sep 6, 2024 12:00:00").getTime();
@@ -213,7 +178,7 @@
             const observerOptions = {
                 root: null,
                 rootMargin: "0px",
-                threshold: 0.5
+                threshold: 0.2
             };
 
             function observerCallback(entries, observer) {
@@ -288,9 +253,33 @@
             function randomNumber(min, max) {
                 return Math.floor(Math.random() * (max - min + 1)) + min;
             }
+
         });
     </script>
+    <%--   <script>
+        let flip = document.querySelector('.flip');
+        let letter = document.querySelector('.letter');
+        let envelopeContainer = document.querySelector('.envelope-container');
+
+        // Function to open the envelope
+        function openEnvelope() {
+            flip.classList.add('open');
+            letter.classList.add('letterOpen');
+        }
+
+        // Add event listener to detect animation end
+        flip.addEventListener('animationend', function () {
+            // After animation ends, hide the envelope container
+            envelopeContainer.style.display = 'none';
+        });
+
+        // Add event listener to the envelope element
+        document.getElementById('envelope').addEventListener('click', function () {
+            openEnvelope();
+        });
+    </script>--%>
 </asp:Content>
+
 
 
 

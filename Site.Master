@@ -6,27 +6,26 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex & Mel's Wedding</title>
+    <title runat="server">Alex & Mel's Wedding</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:BundleReference runat="server" Path="~/styles/css" />
     <link href="~/images/favicon.png" rel="shortcut icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <link href="styles/Site.css" rel="stylesheet" />
     <link href="styles/Global.css" rel="stylesheet" />
     <link href="styles/foundation.css" rel="stylesheet" />
 </head>
 <body>
     <script src="scripts/jquery-3.4.1.js"></script>
-    <script src="scripts/jquery-3.4.1.intellisense.js"></script>
     <script src="scripts/vendor/foundation.js"></script>
     <script src="scripts/vendor/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="scripts/vendor/what-input.js"></script>
     <form runat="server">
         <asp:ScriptManager runat="server">
@@ -47,27 +46,21 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
         <section class="navbar">
             <div class="grid-x align-left">
-                <a href="#home">Home</a>
-                <a href="#info">General Information</a>
-                <a href="#guestform">Guest form</a>
+                <a href="#attendance">Attendance Form</a>
+                <a href="#location">Location</a>
+                <a href="#lodging">Lodging</a>
             </div>
         </section>
-
         <div class="body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-
-
         </div>
-        <%-- <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>--%>
+        <footer>
+            <h5>&copy; <%: DateTime.Now.Year %> - Our personal wedding website designed and developed by the bride and groom themselves.</h5>
+        </footer>
     </form>
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-    </asp:PlaceHolder>
+
 </body>
 </html>

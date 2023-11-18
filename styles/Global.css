@@ -1,7 +1,6 @@
 ﻿@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Passion+One&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Coustard:900&display=swap");
-@import 'animate.css';
 @font-face {
   font-family: "montserrat-light";
   src: url("../fonts/montserrat-light.ttf") format("truetype");
@@ -61,20 +60,13 @@ body a:hover {
 }
 @media screen and (max-width: 64em) {
   .navbar a {
-    font-size: 24px;
-    padding: 0 5px;
+    font-size: 20px;
+    padding: 0 10px;
   }
 }
 
-.navbar.small {
-  transition: all 0.3s ease;
-  padding: 7px;
-  clip-path: none;
-  height: auto;
-}
-.navbar.small a {
-  font-size: 25px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+#txtFullName {
+  resize: none !important;
 }
 
 .body-content {
@@ -165,4 +157,9 @@ a:hover {
   padding-left: 0.625rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+footer h5 {
+  padding: 0 0 20px 20px;
+  font-family: "montserrat-light", truetype;
 }
