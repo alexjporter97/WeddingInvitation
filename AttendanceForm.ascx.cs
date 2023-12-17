@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net.Mail;
 using System.Net;
+using System.Collections;
+using System.Web.UI.HtmlControls;
 
 namespace WeddingInvitationWebsite
 {
@@ -18,16 +20,16 @@ namespace WeddingInvitationWebsite
             if (!IsPostBack)
             {
 
-                txtFullName.TextMode = TextBoxMode.MultiLine;
+                txtDietaryRequirement.Text = "Enter your dietary requirements here...";
 
-                txtFullName.Rows = 4;
-                txtFullName.Columns = 50;
+                txtDietaryRequirement.Rows = 4;
+                txtDietaryRequirement.Columns = 50;
             }
         }
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
-            string fullName = txtFullName.Text;
+            string dietaryrequirement = txtDietaryRequirement.Text;
             string acceptanceStatus = string.Empty;
 
             if (RadioButton1.Checked)
@@ -39,17 +41,20 @@ namespace WeddingInvitationWebsite
                 acceptanceStatus = "Regretfully declines";
             }
             //string info = txtInfo.Text;
-
+            List<string> selectedItems = GetSelectedItems();
             string recipientEmail = "alexandmelissa@vineyardweddinginvitation.co.uk";
             string senderEmail = "alexandmelissa@vineyardweddinginvitation.co.uk";
             string senderPassword = "Assassinblood7!";
 
             string subject = "Guest Attendance Form Submission";
-            string body = $"Full Name(s): {fullName}\nAcceptance Status: {acceptanceStatus}";
+            string itemsList = string.Join(", ", selectedItems);
+            string body = $"Guest(s) Attending: {itemsList}<br><br>Dietary Requirements: {dietaryrequirement}<br><br>Acceptance Status: {acceptanceStatus}<br>";
+
 
             try
             {
                 MailMessage message = new MailMessage(senderEmail, recipientEmail, subject, body);
+                message.IsBodyHtml = true;
 
                 SmtpClient smtpClient = new SmtpClient("smtp.ionos.co.uk");
                 smtpClient.Port = 587;
@@ -71,9 +76,38 @@ namespace WeddingInvitationWebsite
             }
 
 
-            txtFullName.Text = string.Empty;
+            //dietaryrequirement.Text = string.Empty;
 
         }
+        private List<string> GetSelectedItems()
+        {
+            List<string> selectedItems = new List<string>();
+
+            // Get the posted form values for checkboxes
+            var formValues = Request.Form.AllKeys.ToDictionary(key => key, key => Request.Form[key]);
+
+            // Output form values to debug or console
+            foreach (var key in formValues.Keys)
+            {
+                var value = formValues[key]?.ToString();
+                System.Diagnostics.Debug.WriteLine($"Key: {key}, Value: {value}");
+
+                // Use the exact name of the checkboxes as they appear in the form
+                if (key.StartsWith("ctl00$MainContent$ctl00$chkName") && !string.IsNullOrEmpty(formValues[key]))
+                {
+                    // Directly get the checkbox label value
+                    string labelText = formValues[key];
+                    //System.Diagnostics.Debug.WriteLine($"Checkbox Label: {labelText}");
+                    selectedItems.Add(labelText);
+                }
+            }
+
+            //System.Diagnostics.Debug.WriteLine($"Selected Items: {string.Join(", ", selectedItems)}");
+            return selectedItems;
+        }
+
+
+
 
 
     }

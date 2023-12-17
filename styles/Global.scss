@@ -36,7 +36,7 @@ body {
     z-index: 10;
     transition: all 0.3s ease;
 
-  
+
 
     &__background {
         height: 130px;
@@ -59,7 +59,7 @@ body {
 }
 
 #txtFullName {
-    resize: none !important; 
+    resize: none !important;
 }
 
 .body-content {
@@ -167,3 +167,8 @@ footer {
 
 
 //Animations
+
+//Misc
+.max-width {
+    width: 100%;
+}

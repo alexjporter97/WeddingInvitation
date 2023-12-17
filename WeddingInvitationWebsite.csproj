@@ -114,6 +114,7 @@
     <Content Include="images\leaves-border.png" />
     <Content Include="images\main-image-2.jpg" />
     <Content Include="images\main-image.jpg" />
+    <Content Include="images\music.png" />
     <Content Include="images\pizza-logo-removebg-preview.png" />
     <Content Include="images\running.png" />
     <Content Include="images\walking.png" />
@@ -140,6 +141,12 @@
     <Content Include="styles\Site.min.css">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
+    <Content Include="styles\slick\ajax-loader.gif" />
+    <Content Include="styles\slick\fonts\slick.svg" />
+    <Content Include="styles\slick\slick-theme.css" />
+    <Content Include="styles\slick\slick.css" />
+    <Content Include="styles\slick\slick.js" />
+    <Content Include="styles\slick\slick.min.js" />
     <Content Include="styles\Variables.css">
       <DependentUpon>Variables.scss</DependentUpon>
     </Content>
@@ -237,6 +244,14 @@
     <Content Include="scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="scripts\jquery-3.4.1.min.map" />
     <Content Include="styles\Global.scss" />
+    <Content Include="styles\slick\config.rb" />
+    <Content Include="styles\slick\fonts\slick.eot" />
+    <Content Include="styles\slick\fonts\slick.ttf" />
+    <Content Include="styles\slick\fonts\slick.woff" />
+    <Content Include="styles\slick\slick-theme.less" />
+    <Content Include="styles\slick\slick-theme.scss" />
+    <Content Include="styles\slick\slick.less" />
+    <Content Include="styles\slick\slick.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
